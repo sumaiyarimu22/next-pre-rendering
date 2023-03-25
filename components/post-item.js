@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 const PostItem = ({ post }) => {
   return (
-    <div className="mt-5">
-      <h3 className="text-2xl">{post.title} </h3>
-      <p>{post.body}</p>
-      <hr />
-    </div>
+    <Link href={`/posts/${post.id}`}>
+      <h2>
+        {post.id}-{post.title}
+      </h2>
+    </Link>
   );
 };
 

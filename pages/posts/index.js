@@ -1,19 +1,19 @@
 import PostItem from "@/components/post-item";
+import React from "react";
 
-const posts = ({ posts }) => {
+const Posts = ({ posts }) => {
   return (
     <div className="container mx-auto">
-      <h1 className="text-4xl">posts</h1>
+      <h1 className="text-2xl">Posts</h1>
       {posts.map((post) => (
-        <PostItem key={post.id} post={post} />
+        <PostItem post={post} key={post.id} />
       ))}
     </div>
   );
 };
 
-export default posts;
+export default Posts;
 
-//run server side
 export async function getStaticProps() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const data = await res.json();
