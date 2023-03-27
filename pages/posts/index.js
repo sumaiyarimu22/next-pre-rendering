@@ -1,5 +1,4 @@
 import PostItem from "@/components/post-item";
-import React from "react";
 
 const Posts = ({ posts }) => {
   return (
