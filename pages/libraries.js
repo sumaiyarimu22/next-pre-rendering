@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const libraries = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  cosnt[(error, setError)] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -13,7 +13,7 @@ const libraries = () => {
         const res = await fetch("http://localhost:4000/libraries");
         if (!res.ok) throw new Error("An error has occur...");
 
-        const json = res.json();
+        const json = await res.json();
 
         setIsLoading(false);
         setData(json);
@@ -25,7 +25,21 @@ const libraries = () => {
     getData();
   }, []);
 
-  return <div>libraries</div>;
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+
+  return (
+    <div>
+      <h1>Libraries</h1>
+
+      {data &&
+        data.map((lib) => (
+          <h2 key={lib.id}>
+            {lib.title}-- {lib.core}
+          </h2>
+        ))}
+    </div>
+  );
 };
 
 export default libraries;
