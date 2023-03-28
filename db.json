@@ -83,5 +83,27 @@
       "title": "THREE.js",
       "core": "JavaScript"
     }
+  ],
+  "Eid-gifts": [
+    {
+      "id": 1,
+      "title": "Panjabi",
+      "price": 2500
+    },
+    {
+      "id": 2,
+      "title": "Shari",
+      "price": 3200
+    },
+    {
+      "id": 3,
+      "title": "Tupi",
+      "price": 250
+    },
+    {
+      "id": 4,
+      "title": "Perfume",
+      "price": 450
+    }
   ]
 }
